@@ -3,5 +3,5 @@
 NumeroEntero = int(input("Ingrese un numero por pantalla"))
 
 Resultado = NumeroEntero + (NumeroEntero * 10 / 100)
-print("Numero ingresado incrementado en un 10% : ")
+print("Numero ingresado incrementado en 10% : ")
 print(Resultado)
