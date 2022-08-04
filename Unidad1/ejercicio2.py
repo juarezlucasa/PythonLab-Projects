@@ -4,16 +4,16 @@ import sys
 print("En funcion de los params recibidos, el mismo determinara si los mismos")
 print("son multiplos de 2 ") 
 
-PrimerParametro = int(sys.argv[1])
-SegundoParametro = int(sys.argv[2])
-TercerParametro = int(sys.argv[3])
-NumeroMultiplo = 2
+primerParametro = int(sys.argv[1])
+segundoParametro = int(sys.argv[2])
+tercerParametro = int(sys.argv[3])
+numeroMultiplo = 2
 
-print(PrimerParametro)
-print(PrimerParametro % NumeroMultiplo == 0)
+print(primerParametro)
+print(primerParametro % numeroMultiplo == 0)
 
-print(SegundoParametro)
-print(SegundoParametro % NumeroMultiplo == 0)
+print(segundoParametro)
+print(segundoParametro % numeroMultiplo == 0)
 
-print(TercerParametro)
-print(TercerParametro % NumeroMultiplo == 0)
+print(tercerParametro)
+print(tercerParametro % numeroMultiplo == 0)
