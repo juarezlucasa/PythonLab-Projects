@@ -15,3 +15,6 @@ node_modules
 
 # Ignora files de vscode
 .vscode
+
+# Ignora la carpeta .ejemplos que son anotaciones propias
+.ejemplos
