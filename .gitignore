@@ -18,3 +18,7 @@ node_modules
 
 # Ignora la carpeta .ejemplos que son anotaciones propias
 .ejemplos
+
+# Ignora la carpeta .ipynb_checkpoints del Jupyterlab
+.ipynb_checkpoints
+
