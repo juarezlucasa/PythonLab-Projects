@@ -6,6 +6,9 @@ consulta() para consultar por todas las compras realizadas hasta el momento
 modificar() para modificar una compra realizada
 
 Pregunta: Considera que es más fácil guardar la información en listas o en diccionarios
+Respuesta: Considero mas facil guardar la información en diccionarios, dado que simplifica mucho la consulta,
+Nos ahorramos de tener que escribir un for que recorra toda una lista en busca del file, simplemente lo buscamos pasandole
+la key como argumento. Me parece mucho mas práctico, y creo que tambien mas performante.
 """
 import pprint
 
