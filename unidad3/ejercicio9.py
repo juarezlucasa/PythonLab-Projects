@@ -13,10 +13,7 @@ la key como argumento. Me parece mucho mas práctico, y creo que tambien mas per
 import pprint
 
 
-def alta(diccionario):
-    producto = str(input("Ingrese nombre del producto: "))
-    cantidad = int(input("Ingrese cantidad adquirida: "))
-    importe = int(input("Ingrese importe por el total adquirido del producto: "))
+def alta(producto, cantidad, importe, diccionario):
     diccionario[producto] = {
         "Cantidad": cantidad,
         "Importe": importe,
@@ -36,10 +33,8 @@ def consulta(producto, diccionario):
     pprint.pprint(diccionario.get(producto))
 
 
-def modificar(diccionario):
-    producto = str(input("Ingrese nombre del producto a modificar: "))
-    cantidad_modif = str(input("Ingrese nueva cantidad: "))
-    importe_modif = str(input("Ingrese nuevo importe: "))
+def modificar(producto, cantidad_modif, importe_modif, diccionario):
+
     diccionario[producto] = {"Cantidad": cantidad_modif, "Importe": importe_modif}
     pprint.pprint(diccionario)
 
@@ -58,7 +53,10 @@ print("---" * 50)
 
 while opcion != 9:
     if opcion == 1:
-        diccionario = alta(diccionario)
+        producto = str(input("Ingrese nombre del producto: "))
+        cantidad = int(input("Ingrese cantidad adquirida: "))
+        importe = int(input("Ingrese importe por el total adquirido del producto: "))
+        diccionario = alta(producto, cantidad, importe, diccionario)
     if opcion == 2:
         producto = str(input("Ingrese nombre del producto a eliminar: "))
         diccionario = baja(producto, diccionario)
@@ -66,7 +64,10 @@ while opcion != 9:
         producto = str(input("Ingrese nombre del producto a consultar: "))
         indice = consulta(producto, diccionario)
     if opcion == 4:
-        modificar(diccionario)
+        producto = str(input("Ingrese nombre del producto a modificar: "))
+        cantidad_modif = str(input("Ingrese nueva cantidad: "))
+        importe_modif = str(input("Ingrese nuevo importe: "))
+        modificar(producto, cantidad_modif, importe_modif, diccionario)
     if opcion == 9:
         break
     print("---" * 50)
