@@ -22,3 +22,6 @@ node_modules
 # Ignora la carpeta .ipynb_checkpoints del Jupyterlab
 .ipynb_checkpoints
 
+# Base de datos sqlite3
+.mibase.db
+
