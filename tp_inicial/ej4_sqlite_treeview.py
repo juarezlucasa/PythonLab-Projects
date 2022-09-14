@@ -3,6 +3,8 @@ from tkinter.messagebox import *
 import sqlite3
 from tkinter import ttk
 import re
+from datetime import date
+from xml.etree.ElementTree import tostring
 
 # ##############################################
 # MODELO
@@ -153,8 +155,12 @@ a_val, b_val, c_val, d_val, e_val, f_val = (
 )
 w_ancho = 20
 
+today = date.today()
+
+
 entrada1 = Entry(root, textvariable=a_val, width=w_ancho)
 entrada1.grid(row=1, column=1)
+entrada1.insert(0, today)
 entrada2 = Entry(root, textvariable=b_val, width=w_ancho)
 entrada2.grid(row=2, column=1)
 entrada3 = Entry(root, textvariable=c_val, width=w_ancho)
