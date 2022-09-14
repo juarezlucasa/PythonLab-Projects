@@ -97,6 +97,7 @@ def actualizar_treeview(mitreview):
     resultado = datos.fetchall()
     for registro in resultado:
         print(registro)
+        cuotas_restantes = calcular_cuotas_restantes(registro[4], registro[5])
         mitreview.insert(
             "",
             0,
@@ -107,9 +108,14 @@ def actualizar_treeview(mitreview):
                 registro[3],
                 registro[4],
                 registro[5],
+                cuotas_restantes,
                 registro[6],
             ),
         )
+
+
+def calcular_cuotas_restantes(cuota_actual, cuota_final):
+    return cuota_final - cuota_actual
 
 
 # ##############################################
@@ -165,21 +171,23 @@ entrada6.grid(row=6, column=1)
 # --------------------------------------------------
 
 tree = ttk.Treeview(root)
-tree["columns"] = ("col1", "col2", "col3", "col4", "col5", "col6")
-tree.column("#0", width=90, minwidth=50, anchor=W)
-tree.column("col1", width=200, minwidth=80)
-tree.column("col2", width=200, minwidth=80)
-tree.column("col3", width=200, minwidth=80)
-tree.column("col4", width=200, minwidth=80)
-tree.column("col5", width=200, minwidth=80)
-tree.column("col6", width=200, minwidth=80)
+tree["columns"] = ("col1", "col2", "col3", "col4", "col5", "col6", "col7")
+tree.column("#0", width=10, minwidth=50, anchor=W)
+tree.column("col1", width=100, minwidth=80)
+tree.column("col2", width=150, minwidth=80)
+tree.column("col3", width=350, minwidth=80)
+tree.column("col4", width=100, minwidth=80)
+tree.column("col5", width=100, minwidth=80)
+tree.column("col6", width=150, minwidth=80)
+tree.column("col7", width=100, minwidth=80)
 tree.heading("#0", text="ID")
 tree.heading("col1", text="Fecha")
 tree.heading("col2", text="Tarjeta de credito")
-tree.heading("col3", text="descripcion")
+tree.heading("col3", text="Descripcion")
 tree.heading("col4", text="Cuota actual")
 tree.heading("col5", text="Cuota final")
-tree.heading("col6", text="Monto")
+tree.heading("col6", text="Cuotas restantes")
+tree.heading("col7", text="Monto")
 tree.grid(row=10, column=0, columnspan=4)
 
 boton_alta = Button(
