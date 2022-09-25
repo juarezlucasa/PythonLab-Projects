@@ -1,5 +1,12 @@
+"""
+Trabajo Práctico Modulo 1 Inicial
+Alumnos: Elías Santoro / Lucas Juarez
+Fecha de entrega: 26/09/2022 23:59hs
+"""
+
 from tkinter import *
 from tkinter.messagebox import *
+from tkinter import messagebox
 import sqlite3
 from tkinter import ttk
 import re
@@ -14,6 +21,10 @@ import re
     def validar_precio(self,): pass
 
     def validar_cantidad(self,): pass"""
+
+
+def mensaje_de_error(texto):
+    messagebox.showerror("Error", texto)
 
 
 def conexion():
@@ -46,8 +57,9 @@ except:
 
 def alta(fecha, tarjeta_credito, desc, cuota_actual, cuota_final, monto, tree):
     cadena = tarjeta_credito
-    patron = "^[A-Za-záéíóú]*$"  # regex para el campo cadena
-    if re.match(patron, cadena):
+    patron = "^[A-Za-záéíóú]*$"  # regex para el campo tarjeta_credito
+    patron2 = "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"  # regex para campo fecha
+    if re.match(patron, cadena) and re.match(patron2, fecha):
         print(fecha, tarjeta_credito, desc, cuota_actual, cuota_final, monto)
         con = conexion()
         cursor = con.cursor()
@@ -57,7 +69,11 @@ def alta(fecha, tarjeta_credito, desc, cuota_actual, cuota_final, monto, tree):
         con.commit()
         actualizar_treeview(tree)
     else:
-        print("error en campo producto")
+        error_message = "ERROR: No ingrese ningún número de su Tarjeta de credito. Solo ingrese el nombre de la misma. \n El formato de fecha debe ser dd/mm/yyyyy Ej: 04/10/1992"
+        mensaje_de_error(error_message)
+        # print(
+        #     "ERROR: No ingrese ningún número de su Tarjeta de credito. Solo ingrese el nombre de la misma. \n El formato de fecha debe ser dd/mm/yyyyy Ej: 04/10/1992  "
+        # )
 
 
 def consultar(tree):

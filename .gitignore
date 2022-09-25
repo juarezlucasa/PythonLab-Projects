@@ -25,3 +25,4 @@ node_modules
 # Base de datos sqlite3
 .mibase.db
 
+tp_inicial/mibase.db
