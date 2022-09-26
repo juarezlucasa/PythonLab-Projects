@@ -2,6 +2,7 @@
 Trabajo Práctico Modulo 1 Inicial
 Alumnos: Elías Santoro / Lucas Juarez
 Fecha de entrega: 26/09/2022 23:59hs
+
 """
 
 from tkinter import *
@@ -10,7 +11,7 @@ from tkinter import messagebox
 import sqlite3
 from tkinter import ttk
 import re
-from datetime import date
+from datetime import datetime
 from xml.etree.ElementTree import tostring
 
 # ##############################################
@@ -73,9 +74,6 @@ def alta(fecha, tarjeta_credito, desc, cuota_actual, cuota_final, monto, tree):
     else:
         error_message = "ERROR: No ingrese ningún número de su Tarjeta de credito. Solo ingrese el nombre de la misma. \n El formato de fecha debe ser dd/mm/yyyyy Ej: 04/10/1992"
         mensaje_de_error(error_message)
-        # print(
-        #     "ERROR: No ingrese ningún número de su Tarjeta de credito. Solo ingrese el nombre de la misma. \n El formato de fecha debe ser dd/mm/yyyyy Ej: 04/10/1992  "
-        # )
 
 
 def consultar(tree):
@@ -143,7 +141,7 @@ def calcular_cuotas_restantes(cuota_actual, cuota_final):
 root = Tk()
 root.title("Presupuesto personal")
 
-titulo = Label(root, text="v1.0", bg="DarkOrchid3", fg="thistle1", height=1, width=60)
+titulo = Label(root, text="v1.0", bg="RoyalBlue3", fg="thistle1", height=1, width=60)
 titulo.grid(row=0, column=0, columnspan=4, padx=1, pady=1, sticky=W + E)
 
 producto = Label(root, text="Fecha")
@@ -171,7 +169,7 @@ a_val, b_val, c_val, d_val, e_val, f_val = (
 )
 w_ancho = 20
 
-today = date.today()
+today = datetime.today().strftime("%d/%m/%Y")
 
 
 entrada1 = Entry(root, textvariable=a_val, width=w_ancho)
