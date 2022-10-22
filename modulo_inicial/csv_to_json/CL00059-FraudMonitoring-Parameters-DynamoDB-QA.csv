@@ -1,0 +1,7 @@
+"key","operation","type","value"
+"blacklistedIPs","CREATE","LIST","[{""S"":""190.0.20.10.3.5""},{""S"":""180.222.11.300""},{""S"":""199.99.99.9""}]"
+"STATE_MACHINE_RESPONSE","CREATE","STRING","OFF"
+"IUVIPROFILER_CHECKER","CREATE","BOOLEAN","ON"
+"blacklistedUsers","CREATE","LIST","[{""S"":""Pedro""},{""S"":""Juan""},{""S"":""Luis""}]"
+"SCORE_VALUE","CREATE","NUMBER","550"
+"whitelistedUsers","","LIST","[{""S"":""Olgaie""},{""S"":""Felipe""},{""S"":""David""},{""S"":""juan""}]"

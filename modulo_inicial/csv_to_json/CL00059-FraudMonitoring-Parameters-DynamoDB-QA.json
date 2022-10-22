@@ -1,0 +1,38 @@
+[
+    {
+        "key": "blacklistedIPs",
+        "operation": "CREATE",
+        "type": "LIST",
+        "value": "[{\"S\":\"190.0.20.10.3.5\"},{\"S\":\"180.222.11.300\"},{\"S\":\"199.99.99.9\"}]"
+    },
+    {
+        "key": "STATE_MACHINE_RESPONSE",
+        "operation": "CREATE",
+        "type": "STRING",
+        "value": "OFF"
+    },
+    {
+        "key": "IUVIPROFILER_CHECKER",
+        "operation": "CREATE",
+        "type": "BOOLEAN",
+        "value": "ON"
+    },
+    {
+        "key": "blacklistedUsers",
+        "operation": "CREATE",
+        "type": "LIST",
+        "value": "[{\"S\":\"Pedro\"},{\"S\":\"Juan\"},{\"S\":\"Luis\"}]"
+    },
+    {
+        "key": "SCORE_VALUE",
+        "operation": "CREATE",
+        "type": "NUMBER",
+        "value": "550"
+    },
+    {
+        "key": "whitelistedUsers",
+        "operation": "",
+        "type": "LIST",
+        "value": "[{\"S\":\"Olgaie\"},{\"S\":\"Felipe\"},{\"S\":\"David\"},{\"S\":\"juan\"}]"
+    }
+]
